@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:alpha="0.1"
+        android:state_checked="true"
+        android:color="@color/colorNegative"/>
+    <item android:alpha="0.12"
+        android:state_checked="false"
+        android:color="?attr/colorOutline"/>
+    <item android:alpha="0.12"
+        android:color="#1F767680"/>
+</selector>
