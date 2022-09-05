@@ -1,5 +1,6 @@
-package com.yechy.example
+package com.yechy.example.topappbar
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -11,19 +12,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.AppBarLayout
 import com.google.android.material.divider.MaterialDividerItemDecoration
 import com.google.android.material.switchmaterial.SwitchMaterial
+import com.yechy.example.ExampleAdapter
+import com.yechy.example.R
 
 /**
  *
  * Created by cloud on 2022/8/31.
  */
-class AppbarElevationFragment: Fragment() {
+class ExampleListFragment: Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_appbarlayout_elevation, container, false)
+        val view = inflater.inflate(R.layout.fragment_example_list, container, false)
         return view
     }
 
@@ -32,11 +35,11 @@ class AppbarElevationFragment: Fragment() {
         val appBarLayout = requireActivity().findViewById<AppBarLayout>(R.id.appbar_layout)
         val toggle = view.findViewById<SwitchMaterial>(R.id.switch_set_target)
         toggle.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked) {
-                appBarLayout.liftOnScrollTargetViewId = R.id.scrollView
-            } else {
-                appBarLayout.liftOnScrollTargetViewId = View.NO_ID
-            }
+//            if (isChecked) {
+//                appBarLayout.liftOnScrollTargetViewId = R.id.scrollView
+//            } else {
+//                appBarLayout.liftOnScrollTargetViewId = View.NO_ID
+//            }
         }
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
@@ -44,6 +47,7 @@ class AppbarElevationFragment: Fragment() {
         recyclerView.layoutManager = LinearLayoutManager(context)
         val dividerItemDecoration = MaterialDividerItemDecoration(requireContext(), LinearLayout.VERTICAL)
         dividerItemDecoration.dividerThickness = 40
+        dividerItemDecoration.dividerColor = Color.TRANSPARENT
         recyclerView.addItemDecoration(dividerItemDecoration)
     }
 }

@@ -1,16 +1,15 @@
-package com.yechy.example
+package com.yechy.example.topappbar
 
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.FragmentActivity
-import com.google.android.material.appbar.AppBarLayout
+import androidx.viewpager.widget.ViewPager
 import com.google.android.material.appbar.MaterialToolbar
-import com.google.android.material.switchmaterial.SwitchMaterial
+import com.google.android.material.tabs.TabLayout
+import com.yechy.example.R
 
 /**
  *
@@ -32,11 +31,19 @@ class AppBarElevationActivity: AppCompatActivity() {
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        supportFragmentManager.apply {
-            beginTransaction()
-                .add(R.id.layout_container, AppbarElevationFragment())
-                .commit()
-        }
+//        val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
+//        val viewPager = findViewById<ViewPager>(R.id.view_pager)
+//
+//        viewPager.adapter = TabPagerAdapter(supportFragmentManager)
+//        tabLayout.setupWithViewPager(viewPager)
+//
+//        for (i in 0 until tabLayout.tabCount) {
+//            tabLayout.getTabAt(i)?.text = "Tab ${i+1}"
+//        }
+
+        supportFragmentManager.beginTransaction()
+            .add(R.id.layout_container, ExampleListFragment())
+            .commit()
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

@@ -41,7 +41,7 @@ class ExampleAdapter: RecyclerView.Adapter<ExampleAdapter.ExampleViewHolder>() {
         companion object {
             fun getData(): List<ExampleData> {
                 val dataList = mutableListOf<ExampleData>()
-                for (index in 0..10) {
+                for (index in 1..30) {
                     dataList.add(ExampleData("${index}: title"))
                 }
                 return dataList
