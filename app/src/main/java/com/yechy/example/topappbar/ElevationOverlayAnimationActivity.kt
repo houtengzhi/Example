@@ -6,40 +6,28 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
-import androidx.viewpager.widget.ViewPager
 import com.google.android.material.appbar.MaterialToolbar
-import com.google.android.material.tabs.TabLayout
 import com.yechy.example.R
 
 /**
  *
  * Created by cloud on 2022/8/31.
  */
-class AppBarElevationActivity: AppCompatActivity() {
+class ElevationOverlayAnimationActivity: AppCompatActivity() {
 
     companion object {
         fun actionStart(context: Context) {
-            val intent = Intent(context, AppBarElevationActivity::class.java)
+            val intent = Intent(context, ElevationOverlayAnimationActivity::class.java)
             context.startActivity(intent)
         }
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_appbarlayout_elevation)
+        setContentView(R.layout.activity_elevation_overlay_animation)
         val toolbar = findViewById<MaterialToolbar>(R.id.toolbar)
         setSupportActionBar(toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-
-//        val tabLayout = findViewById<TabLayout>(R.id.tab_layout)
-//        val viewPager = findViewById<ViewPager>(R.id.view_pager)
-//
-//        viewPager.adapter = TabPagerAdapter(supportFragmentManager)
-//        tabLayout.setupWithViewPager(viewPager)
-//
-//        for (i in 0 until tabLayout.tabCount) {
-//            tabLayout.getTabAt(i)?.text = "Tab ${i+1}"
-//        }
 
         supportFragmentManager.beginTransaction()
             .add(R.id.layout_container, ExampleListFragment())

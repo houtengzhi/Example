@@ -1,8 +1,11 @@
 package com.yechy.example
 
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
@@ -22,6 +25,11 @@ class ExampleAdapter: RecyclerView.Adapter<ExampleAdapter.ExampleViewHolder>() {
     override fun onBindViewHolder(holder: ExampleViewHolder, position: Int) {
         val example = dataList[position]
         holder.titleTextView.text = example.title
+        if (position % 2 == 0) {
+            holder.iconImageView.visibility = View.VISIBLE
+        } else {
+            holder.iconImageView.visibility = View.GONE
+        }
     }
 
     override fun getItemCount(): Int {
@@ -30,9 +38,11 @@ class ExampleAdapter: RecyclerView.Adapter<ExampleAdapter.ExampleViewHolder>() {
 
     class ExampleViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         var titleTextView: TextView
+        var iconImageView: ImageView
 
         init {
             titleTextView = itemView.findViewById(R.id.text)
+            iconImageView = itemView.findViewById(R.id.iv_icon)
         }
     }
 

@@ -35,11 +35,11 @@ class ExampleListFragment: Fragment() {
         val appBarLayout = requireActivity().findViewById<AppBarLayout>(R.id.appbar_layout)
         val toggle = view.findViewById<SwitchMaterial>(R.id.switch_set_target)
         toggle.setOnCheckedChangeListener { buttonView, isChecked ->
-//            if (isChecked) {
-//                appBarLayout.liftOnScrollTargetViewId = R.id.scrollView
-//            } else {
-//                appBarLayout.liftOnScrollTargetViewId = View.NO_ID
-//            }
+            if (isChecked) {
+                appBarLayout.liftOnScrollTargetViewId = R.id.recyclerView
+            } else {
+                appBarLayout.liftOnScrollTargetViewId = View.NO_ID
+            }
         }
 
         val recyclerView = view.findViewById<RecyclerView>(R.id.recyclerView)
@@ -49,5 +49,17 @@ class ExampleListFragment: Fragment() {
         dividerItemDecoration.dividerThickness = 40
         dividerItemDecoration.dividerColor = Color.TRANSPARENT
         recyclerView.addItemDecoration(dividerItemDecoration)
+
+        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                recyclerView.adapter?.notifyDataSetChanged()
+            }
+
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+            }
+        })
     }
 }

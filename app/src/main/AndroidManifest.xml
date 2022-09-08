@@ -18,7 +18,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".topappbar.AppBarElevationActivity"
+        <activity android:name=".topappbar.ElevationOverlayAnimationActivity"
             android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".switch.SwitchActivity"/>
     </application>

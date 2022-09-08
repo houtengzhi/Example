@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.yechy.example.switch.SwitchActivity
-import com.yechy.example.topappbar.AppBarElevationActivity
+import com.yechy.example.topappbar.ElevationOverlayAnimationActivity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         findViewById<Button>(R.id.btn_appbar_elevation).setOnClickListener {
-            AppBarElevationActivity.actionStart(this)
+            ElevationOverlayAnimationActivity.actionStart(this)
         }
 
         findViewById<Button>(R.id.btn_switch).setOnClickListener {
