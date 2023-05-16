@@ -21,6 +21,8 @@
         <activity android:name=".topappbar.ElevationOverlayAnimationActivity"
             android:windowSoftInputMode="adjustPan"/>
         <activity android:name=".switch.SwitchActivity"/>
+        <activity android:name=".ellipsize.EllipsizeTextViewActivity"/>
+        <activity android:name=".animator.AnimatorActivity"/>
     </application>
 
 </manifest>

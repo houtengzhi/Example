@@ -48,6 +48,28 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btn_appbar_elevation"/>
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_ellpsize"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="EllipsizeTextView"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_switch"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_animator"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Animator"
+                android:layout_marginTop="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/btn_ellpsize"/>
+
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
