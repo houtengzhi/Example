@@ -10,6 +10,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.yechy.example.animator.AnimatorActivity
 import com.yechy.example.ellipsize.EllipsizeTextViewActivity
+import com.yechy.example.image.ImageActivity
 import com.yechy.example.switch.SwitchActivity
 import com.yechy.example.topappbar.ElevationOverlayAnimationActivity
 import java.util.*
@@ -43,16 +44,12 @@ class MainActivity : AppCompatActivity() {
             showCountDownDialog(10)
         }
 
+        findViewById<Button>(R.id.btn_image).setOnClickListener {
+            ImageActivity.actionStart(this)
+        }
+
         logAllLocales()
 
-        val activity = this
-        Timer().schedule(object : TimerTask() {
-            override fun run() {
-                Log.d(TAG, "time")
-                AnimatorActivity.actionStart(activity)
-            }
-
-        }, 10000)
     }
 
     fun logAllLocales() {
