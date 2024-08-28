@@ -55,7 +55,7 @@ class MainActivity : AppCompatActivity() {
     fun logAllLocales() {
         val list = Locale.getAvailableLocales()
         list.forEach {
-            Log.d("Locale", "country:${it.country}, lan=${it.language}, script=${it.script}, displayLanguage=${it.displayLanguage}")
+            Log.v("Locale", "country:${it.country}, lan=${it.language}, script=${it.script}, displayLanguage=${it.displayLanguage}")
         }
     }
 
